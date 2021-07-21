@@ -7,7 +7,6 @@ export default function Home() {
   const dispatch = useDispatch();
   const {items: champions, isLoading, isError} = useSelector(state => state.champions);
 
-
   useEffect( async ()=>{
     dispatch(retrieveChampions())
     
@@ -17,12 +16,8 @@ export default function Home() {
     return <p>Carregando...</p>
   }
   if (isError){
-    return <p>Cago tudo</p>
+    return <p>Erro ao carregar...</p>
   }
-
-
-
-
 
   return (
     <ul>
